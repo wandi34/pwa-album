@@ -17,3 +17,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .project
+.tern-project
+/.idea
+pwa-album.iml
