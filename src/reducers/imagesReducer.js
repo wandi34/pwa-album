@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case 'GET_IMAGES':
           return Object.assign({}, state, {
-                images: ["Eins", "Zwei", "Vier"]
+                images: action.images
               })
         default:
             return state

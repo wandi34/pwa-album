@@ -11,16 +11,13 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    // this.props.getImages();
+    this.props.getImages();
   }
 
   render() {
-    if (this.props.images === undefined){ return (
-      <button onClick={() => this.props.getImages()}>Test</button>
-    )}
 
     return (
-      <div>{this.props.images}</div>
+      this.props.images ? <Gallery images={this.props.images}></Gallery> : null
     );
   }
 }
