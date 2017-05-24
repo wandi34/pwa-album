@@ -1,15 +1,14 @@
+export const initialState = {
+};
 
 
-
-const images = (state = {}, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case 'GET_IMAGES':
-            return {
-                images: ["Eins", "Zwei", "Drei"]
-            };
+          return Object.assign(state, {
+                images: ["Eins", "Zwei", "Vier"]
+              })
         default:
             return state
     }
 };
-
-export default images
