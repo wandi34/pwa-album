@@ -1,8 +1,11 @@
-import React, { PropTypes } from 'react';
-import Gallery from 'react-grid-gallery';
+import React from 'react';
+// import Lightbox from 'react-images';
 import * as actions from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
+import ReactSpinner from "react-spinner";
+import Gallery from 'react-grid-gallery';
+import Lightbox from 'react-lightbox-component';
 
 class App extends React.Component {
   constructor(props){
@@ -11,13 +14,18 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    this.props.getImages();
+    this.props.fetchImages();
+  }
+
+  closeLightbox() {
+
   }
 
   render() {
-
     return (
-      this.props.images ? <Gallery images={this.props.images}></Gallery> : null
+      this.props.images ?
+        <Gallery images={this.props.images} />
+        : <ReactSpinner/>
     );
   }
 }
@@ -27,7 +35,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     images: state.images
   }
