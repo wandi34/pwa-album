@@ -19,13 +19,22 @@ function receivePosts(json) {
 
 function correctData(json) {
   console.log("Correcting the json data");
-  var tmp = json.data.splice(0,10);
+  var tmp = json.data.splice(0,20);
   json.data = tmp;
   json.data.forEach(function(entry) {
-    entry.src = entry.link;
+    if (entry.cover !== undefined) {
+      entry.src = "http://i.imgur.com/" + entry.cover + ".jpg"
+    } else {
+      entry.src = "http://i.imgur.com/" + entry.id + "b.jpg"
+    }
+
     delete entry.link;
+    delete entry.tags;
+    entry.thumbnailWidth = 200;
+    entry.thumbnailHeight = 200;
     entry.thumbnail = entry.src;
   })
+  console.log(tmp);
   return {
     type: "CORRECTING_IMAGES",
     images: json
