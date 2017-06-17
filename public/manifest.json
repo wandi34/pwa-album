@@ -1,6 +1,6 @@
 {
-  "short_name": "My First PWA",
-  "name": "My First Progressive Web App",
+  "short_name": "Album_PWA",
+  "name": "Imgur Album PWA",
   "icons": [
     {
       "src":"icon.png",

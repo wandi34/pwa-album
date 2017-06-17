@@ -23,9 +23,13 @@ function correctData(json) {
   json.data = tmp;
   json.data.forEach(function(entry) {
     if (entry.cover !== undefined) {
-      entry.src = "http://i.imgur.com/" + entry.cover + ".jpg"
+      entry.src = "https://i.imgur.com/" + entry.cover + "t.jpg"
     } else {
-      entry.src = "http://i.imgur.com/" + entry.id + "b.jpg"
+      entry.src = "https://i.imgur.com/" + entry.id + "t.jpg"
+    }
+
+    if (entry.src.substring(0,5) !== "https") {
+      console.log("Ungleich");
     }
 
     delete entry.link;
