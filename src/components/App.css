@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  max-width: 1024px;
+  margin-top: 0px;
+  margin: auto;
+  background-color: grey;
+  margin-top: 0px;
+  z-index: -1;
+}
+
+.App-header {
+  height: 3em;
+  background-color: DodgerBlue ;
+  padding-left: 0.5em;
+  position: fixed;
+  margin-top: 0px;
+  top: 0px;
+  width: 100%;
+  left: 0px;
+  align-items: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  z-index: 1;
+  align-content: flex-start;
+}
+
+.Header-text {
+  margin-top: 0px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 2024px;
+  margin: auto;
+  align-self: flex-start;
+}
+
+.Appbody {
+  margin-top: 3em;
+  z-index: 0;
+}

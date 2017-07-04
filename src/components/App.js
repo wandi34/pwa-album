@@ -1,11 +1,11 @@
 import React from 'react';
-// import Lightbox from 'react-images';
 import * as actions from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 import ReactSpinner from "react-spinner";
 import Gallery from 'react-grid-gallery';
-import Lightbox from 'react-lightbox-component';
+import { Navbar } from 'react-bootstrap';
+import "./App.css";
 
 class App extends React.Component {
   constructor(props){
@@ -23,9 +23,18 @@ class App extends React.Component {
 
   render() {
     return (
-      this.props.images ?
-        <Gallery images={this.props.images} />
-        : <ReactSpinner/>
+      <div className="App">
+        <div className="App-header">
+          <h3 className="Header-text"> Imgur Client </h3>
+        </div>
+        <div className="Appbody">
+          <div>{this.props.images ?
+            <Gallery images={this.props.images}/>
+            : <ReactSpinner/>}
+          </div>
+          </div>
+      </div>
+
     );
   }
 }
@@ -38,6 +47,10 @@ const mapStateToProps = (state) => {
   return {
     images: state.images
   }
+}
+
+function onThumbnailClick() {
+  console.log("clicked");
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -27,12 +27,6 @@ function correctData(json) {
     } else {
       entry.src = "https://i.imgur.com/" + entry.id + "t.jpg"
     }
-
-    if (entry.src.substring(0,5) !== "https") {
-      console.log("Ungleich");
-    }
-
-    delete entry.link;
     delete entry.tags;
     entry.thumbnailWidth = 200;
     entry.thumbnailHeight = 200;
