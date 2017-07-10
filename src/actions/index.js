@@ -23,9 +23,9 @@ function correctData(json) {
   json.data = tmp;
   json.data.forEach(function(entry) {
     if (entry.cover !== undefined) {
-      entry.src = "https://i.imgur.com/" + entry.cover + "t.jpg"
+      entry.src = "https://i.imgur.com/" + entry.cover + "b.jpg"
     } else {
-      entry.src = "https://i.imgur.com/" + entry.id + "t.jpg"
+      entry.src = "https://i.imgur.com/" + entry.id + "b.jpg"
     }
     delete entry.tags;
     entry.thumbnailWidth = 200;

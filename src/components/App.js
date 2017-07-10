@@ -29,7 +29,7 @@ class App extends React.Component {
         </div>
         <div className="Appbody">
           <div>{this.props.images ?
-            <Gallery images={this.props.images}/>
+            <Gallery margin="6" images={this.props.images}/>
             : <ReactSpinner/>}
           </div>
           </div>
